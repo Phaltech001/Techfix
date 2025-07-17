@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Fix Now Company Limited - Your Problem, Our Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;606;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --dark-blue: #0f4c81;
+            --light-grey: #f5f7fa;
+            --text-color: #333;
+            --white: #ffffff;
+            --green: #28a745;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-grey);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        header .logo {
+            height: 50px; /* Adjust as needed */
+            margin-right: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--dark-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #2a2c39; /* Dark background from images */
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .hero .tagline {
+            background-color: var(--primary-blue);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .hero .hero-image {
+            max-width: 80%; /* Adjust size as needed */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+        }
+
+        .hero .cta-button {
+            display: inline-block;
+            background-color: var(--green);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #218838;
+        }
+
+        /* Main Content Sections */
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding: 1rem;
+        }
+
+        section h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        section p, section ul {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            list-style: disc;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-item {
+            text-align: center;
+            background-color: var(--light-grey);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-item img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .service-item h3 {
+            color: var(--dark-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .office-hours {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: #777;
+            background-color: #eee;
+            margin-top: 3rem;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .hero .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                margin: 1rem auto;
+                padding: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr; /* Stack services on small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero .hero-image {
+                max-width: 95%;
+            }
+
+            section p, section ul {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="techfix now final.png" alt="Tech Fix Now Logo" class="logo">
+                <h1>Tech Fix Now Company Limited</h1>
+            </div>
+            <p>Expert Repair Solutions for Africa</p>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>We Unlock all Type of Phones</h2>
+            <p class="tagline">"Your Problem, Our Solution"</p>
+            <a href="#contact" class="cta-button">CALL US</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="about">
+            <h2>Who We Are</h2>
+            <p>Tech Fix Now Company Limited is a technology repair company providing high-quality, affordable repair services for electronic devices. Based in Sierra Leone, we aim to expand across Africa with a focus on convenience and reliability.</p>
+
+            <h3>Our Mission</h3>
+            <p>To bridge the gap in access to professional tech repair services across Africa by offering mobile, expert, and efficient solutions.</p>
+
+            <h3>Our Vision</h3>
+            <p>To become the leading tech gadget repair provider in Africa through innovation, trust, and accessibility.</p>
+
+            <h3>What Makes Us Unique</h3>
+            <ul>
+                <li>Mobile Repair Units reaching underserved communities</li>
+                <li>Experienced and specialized technicians</li>
+                <li>Wide range of services and affordable pricing</li>
+                <li>Commitment to customer satisfaction</li>
+            </ul>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <img src="images (1).jpg" alt="Android Unlock Screen">
+                    <h3>Password Unlock</h3>
+                    <p>Unlock forgotten passwords for your devices.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images (2).jpg" alt="iCloud Key">
+                    <h3>iCloud Unlock</h3>
+                    <p>Unlock iCloud accounts.</p>
+                </div>
+                <div class="service-item">
+                    <img src="MDM Unlock.jpg.jpg" alt="MDM Unlock">
+                    <h3>MDM Unlock</h3>
+                    <p>Bypass Mobile Device Management locks.</p>
+                </div>
+                <div class="service-item">
+                    <img src="background-business-computer-connection-thumbnail.jpg" alt="Laptop and Phone">
+                    <h3>Software Installation & Troubleshooting</h3>
+                    <p>Full software support for phones and computers.</p>
+                </div>
+                <div class="service-item">
+                    <img src="HD-wallpaper-2018-apple-macbook-ios-12-system.jpg" alt="Laptop">
+                    <h3>Hardware Repairs</h3>
+                    <p>Repairs for phones, tablets, computers, and gaming devices.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Network Unlock</h3>w
+                    <p>Unlock your phone from specific network carriers.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Google (FRP) Unlock</h3>
+                    <p>Bypass Google Factory Reset Protection.</p>
+                </div>
+                <div class="service-item">
+                    <h3>MI Account Unlock</h3>
+                    <p>Unlock Xiaomi (MI) accounts.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Website Design</h3>
+                    <p>Professional website design services.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Sales of Accessories</h3>
+                    <p>Chargers, screens, SD cards, and more.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Mobile Repair Unit</h3>
+                    <p>On-site repairs directly in communities.</p>
+                </div>
+            </div>
+        </section>
+tui
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p class="office-hours">Office Hours: 8:00am - 8:00pm</p>
+            <div class="contact-info">
+                <p>Call Us: <a href="tel:+23278001775">+23278001775</a> / <a href="tel:+23230170434">+23230170434</a></p>
+                <p>Location: #2 Turnner Street, Koidu City, Kono District</p>
+                <p>Email: <a href="mailto:sltechfixnow@gmail.com">sltechfixnow@gmail.com</a></p>
+            </div>
+            </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tech Fix Now Company Limited. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
